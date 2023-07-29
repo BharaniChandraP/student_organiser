@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            background-image: url('https://cdn.pixabay.com/photo/2015/11/19/21/10/glasses-1052010_640.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            color: #004d99;
+            margin-top: 30px;
+        }
+
+        .menu {
+            margin-top: 20px;
+        }
+
+        .menu a {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #004d99;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #003366;
+        }
+
+        .logout-btn {
+            margin-top: 20px;
+        }
+
+        .logout-btn button[type="submit"] {
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #cc0000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn button[type="submit"]:hover {
+            background-color: #990000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi <%= name %></h1>
+    <div class="menu">
+        <a href="/createassignment">Create Assignment</a>
+        <a href="/profile">Profile</a>
+        <a href="/expenseTracker">Expense Tracker</a>
+    </div>
+    <div class="logout-btn">
+        <form action="/logout?_method=DELETE" method="POST">
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+</body>
+</html>

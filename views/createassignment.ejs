@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29yayUyMGxpc3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        h1 {
+            color: #004d99;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Adding some transparency to the background */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #004d99;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Assignment</h1>
+    <form action="/createassignment" method="post">
+        <div>
+            <label for="assignmentname">Assignment Name</label>
+            <input type="text" name="assignmentname" placeholder="Assignment Name" required>
+        </div>
+        <div>
+            <label for="dueDate">Due Date</label>
+            <input type="date" name="dueDate" placeholder="Due Date" required>
+        </div>
+        <div>
+            <label for="course">Course</label>
+            <input type="text" name="course" placeholder="Course" required>
+        </div>
+        <div>
+            <label for="document">Upload Document:</label>
+            <input type="file" name="document" id="document">
+        </div>
+
+        <button type="submit">Create Assignment</button>
+    </form>
+</body>
+</html>
+
+
+

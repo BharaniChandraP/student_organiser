@@ -1,0 +1,32 @@
+<!-- gpa.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GPA Calculation</title>
+</head>
+<body>
+  <h1>GPA Calculation</h1>
+  <form method="POST" action="/calculate">
+    <% for (let i = 0; i < 8; i++) { %>
+      <label for="subject<%= i %>">Subject <%= i+1 %>:</label>
+      <input type="text" id="subject<%= i %>" name="subject[]" required>
+      <br>
+      <label for="credits<%= i %>">Credits <%= i+1 %>:</label>
+      <input type="number" id="credits<%= i %>" name="credits[]" required>
+      <br>
+      <label for="grade<%= i %>">Grade <%= i+1 %>:</label>
+      <select id="grade<%= i %>" name="grade[]" required>
+        <option value="S">S</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+      </select>
+      <br>
+    <% } %>
+    <button type="submit">Calculate GPA</button>
+  </form>
+</body>
+</html>

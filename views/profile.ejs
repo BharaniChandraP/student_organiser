@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome <%= user.name %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #004d99;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #004d99;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #004d99;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            color: #003366;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome <%= user.name %></h1>
+    <h2>Expense Tracking</h2>
+    <a href="/expenseTracker">Expense Tracker</a>
+    <h2>Assignments:</h2>
+    <ul>
+        <% user.assignments.forEach(function(assignment) { %>
+            <li>
+                <strong>Assignment Name:</strong> <%= assignment.assignmentname %><br>
+                <strong>Due Date:</strong> <%= assignment.dueDate.toDateString() %>
+                <% if (assignment.file) { %>
+                     <a href="/download/<%= assignment.file %>">Download</a>
+                     
+                  <% } else{ %>
+                    No file uploaded for this assignment.
+                    <% } %>
+
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
